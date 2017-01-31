@@ -1,6 +1,6 @@
 html,
 body {
-    height: 60%;
+    height: 75%;
 }
 
 html {
@@ -13,6 +13,10 @@ body {
     vertical-align: middle;
     text-align: center;
     font-family: "Fjalla One", sans-serif;
+    background-image: url("../img/rainsepia.jpg");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: fixed;
 }
 
 h1 span {
@@ -23,6 +27,7 @@ h1 span {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 6px;
+    font-weight: lighter;
 }
 
 p {
@@ -34,11 +39,17 @@ p {
     border: 2px solid black;
     border-radius: 6px;
     padding: 6px;
+    transition-duration: 0.3s;
+}
+
+#temperature:hover {
+    cursor: pointer;
+    background-color: lightblue;
+    border: none;
 }
 
 #weather-container {
     background-color: white;
-    border: 0.5px solid black;
     border-radius: 6px;
     padding: 20px;
 }

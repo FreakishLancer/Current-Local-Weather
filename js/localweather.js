@@ -12,8 +12,17 @@ class User {
         this.currentWeatherAPI = `http://api.openweathermap.org/data/2.5/weather?lat=${this._lat}&lon=${this._long}&units=${this.tempUnit}&appid=40e3305e7c9e05d406ca2147ad14d791 `;
     }
 
-    convertTemp() {
-        (this.isMetric) ? this.setToImperial() : this.setToMetric();
+    convertUnit(temp) {
+        if (this.isMetric) {
+            temp = Math.round((temp * 9) / 5) + 32;
+            this.setToImperial();
+            return temp;
+        }
+        else {
+            temp = Math.round((temp - 32) * 5) / 9;
+            this.setToMetric();
+            return temp;
+        }
     }
 
     setToMetric() {
@@ -38,22 +47,21 @@ $(document).ready(() => {
 
         $("#user-location").text(`${user._city}, ${user._region}, ${user._country} ${user._postal}`);
 
-
-
         $.getJSON(user.currentWeatherAPI, currentWeatherData => {
-            let currentTemp = currentWeatherData.main.temp;
+            let currentTemp = Math.round(currentWeatherData.main.temp);
             let weatherParam = currentWeatherData.weather[0].main;
             let weatherDesc = currentWeatherData.weather[0].description;
             let weatherIcon = currentWeatherData.weather[0].icon;
 
             console.log(weatherDesc);
 
-            $("#temperature").text(`${currentTemp} ${user.tempCode}`);
+            $("#temperature").html(`${currentTemp} ${user.tempCode}`);
             $("#weather-description").text(`${weatherDesc}`);
             $("#weather-icon").attr("src", `https://openweathermap.org/img/w/${weatherIcon}.png`);
 
             $("#temperature").on("click", () => {
-                
+                 currentTemp = user.convertUnit(currentTemp);
+                $("#temperature").html(`${currentTemp} ${user.tempCode}`);
             });
         });
     });
