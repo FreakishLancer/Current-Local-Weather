@@ -13,7 +13,6 @@ body {
     vertical-align: middle;
     text-align: center;
     font-family: "Fjalla One", sans-serif;
-    background-image: url("../img/rainsepia.jpg");
     background-repeat: no-repeat;
     background-position: top left;
     background-attachment: fixed;
@@ -34,22 +33,29 @@ p {
     font-size: 2em;
 }
 
-#weather-description,
-#temperature {
-    border: 2px solid black;
+.stats {
     border-radius: 6px;
     padding: 6px;
     transition-duration: 0.3s;
+    background-color: white;
 }
 
-#temperature:hover {
+.unit-change {
+    background-color: #E6BBAD;
+}
+
+.unit-change:hover {
     cursor: pointer;
     background-color: lightblue;
     border: none;
 }
 
+.unit-change:active {
+    background-color: darkred;
+}
+
 #weather-container {
-    background-color: white;
-    border-radius: 6px;
+    background-image: linear-gradient(to bottom, white, lightblue);
+    border-radius: 16px;
     padding: 20px;
 }
