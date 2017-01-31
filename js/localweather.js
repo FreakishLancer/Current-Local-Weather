@@ -53,18 +53,6 @@ class User {
     }
 }
 
-const weatherBackgrounds = {
-    "clear sky": "https://static.pexels.com/photos/105234/pexels-photo-105234.jpeg",
-    "few clouds": "https://static.pexels.com/photos/3768/sky-sunny-clouds-cloudy.jpg",
-    "scattered clouds": "https://static.pexels.com/photos/46160/field-clouds-sky-earth-46160.jpeg",
-    "broken clouds": "https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Desktop-Image-Download-Free.jpg",
-    "shower rain": "https://static.pexels.com/photos/17739/pexels-photo.jpg",
-    "rain": "https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Background-HD.jpg",
-    "thunderstorm": "https://www.publicdomainpictures.net/pictures/160000/velka/eclairs-foudre-et-nuages-sombres-1456251710RTZ.jpg",
-    "snow": "https://static.pexels.com/photos/72458/pexels-photo-72458.jpeg",
-    "mist": "https://upload.wikimedia.org/wikipedia/commons/0/01/Krakow_Wawel_i_Leg_przed_wschodem_Slonca.jpg"
-};
-
 $(document).ready(() => {
 
     $.getJSON("https://ipinfo.io", geoData => {
@@ -80,6 +68,18 @@ $(document).ready(() => {
             let humidity = currentWeatherData.main.humidity;
 
             console.log(weatherDesc);
+
+            const weatherBackgrounds = {
+                "clear sky": "https://static.pexels.com/photos/105234/pexels-photo-105234.jpeg",
+                "few clouds": "https://static.pexels.com/photos/3768/sky-sunny-clouds-cloudy.jpg",
+                "scattered clouds": "https://static.pexels.com/photos/46160/field-clouds-sky-earth-46160.jpeg",
+                "broken clouds": "https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Desktop-Image-Download-Free.jpg",
+                "shower rain": "https://static.pexels.com/photos/17739/pexels-photo.jpg",
+                "rain": "https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Background-HD.jpg",
+                "thunderstorm": "https://www.publicdomainpictures.net/pictures/160000/velka/eclairs-foudre-et-nuages-sombres-1456251710RTZ.jpg",
+                "snow": "https://static.pexels.com/photos/72458/pexels-photo-72458.jpeg",
+                "mist": "https://upload.wikimedia.org/wikipedia/commons/0/01/Krakow_Wawel_i_Leg_przed_wschodem_Slonca.jpg"
+            };
 
             $("#temperature").html(`${Math.round(currentTemp)}&deg; ${user.tempCode}`);
             $("#weather-description").text(`${weatherDesc}`);
