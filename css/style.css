@@ -1,0 +1,44 @@
+html,
+body {
+    height: 60%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Fjalla One", sans-serif;
+}
+
+h1 span {
+    font-size: 0.75em;
+    background-color: lightblue;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 6px;
+}
+
+p {
+    font-size: 2em;
+}
+
+#weather-description,
+#temperature {
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+#weather-container {
+    background-color: white;
+    border: 0.5px solid black;
+    border-radius: 6px;
+    padding: 20px;
+}
