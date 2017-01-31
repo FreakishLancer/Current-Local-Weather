@@ -64,9 +64,6 @@ $(document).ready(() => {
             let windSpeed = user.isMetric ? currentWeatherData.current.wind_kph : currentWeatherData.current.wind_mph;
             let humidity = currentWeatherData.current.humidity;
 
-            console.log(windSpeed);
-            console.log(currentWeatherData.current.wind_kph);
-
             const weatherBackgrounds = {
                 "clear": "https://static.pexels.com/photos/105234/pexels-photo-105234.jpeg",
                 "cloud": "https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Desktop-Image-Download-Free.jpg",
