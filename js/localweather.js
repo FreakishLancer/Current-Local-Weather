@@ -86,7 +86,7 @@ $(document).ready(() => {
             $("#weather-icon").attr("src", `https://openweathermap.org/img/w/${weatherIcon}.png`);
             $("#humidity").html(`${humidity}%`);
             $("#wind-speed").html(`${Math.round(windSpeed)} ${user.speedUnit}`);
-            $("body").css("background-image", `url(${weatherBackgrounds[weatherDesc]}`);
+            $("body").css("background-image", `url(${weatherBackgrounds[weatherDesc]})`);
             console.log(weatherBackgrounds[weatherDesc]);
 
             $(".unit-change").on("click", () => {
