@@ -55,7 +55,8 @@ $(document).ready(() => {
     $.getJSON("https://ipinfo.io", geoData => { // Gets JSON from IPInfo API.
         let user = new User(geoData);
 
-        $("#user-location").text(`${user._city}, ${user._region}, ${user._country} ${user._postal}`);
+        if (user._country !== "US") $("#user-location").text(`${user._city}, ${user._region}, ${user._country}`);
+        else $("#user-location").text(`${user._city}, ${user._region}, ${user._country} ${user._postal}`);
 
         $.getJSON(user.currentWeatherAPI, currentWeatherData => {
             let currentTemp = user.isMetric ? currentWeatherData.current.temp_c : currentWeatherData.current.temp_f;
@@ -74,7 +75,8 @@ $(document).ready(() => {
                 "snow": "https://static.pexels.com/photos/72458/pexels-photo-72458.jpeg",
                 "sleet": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Sleet_on_the_ground.jpg",
                 "ice": "https://upload.wikimedia.org/wikipedia/commons/a/a3/2013-01-24_Ice_pellets_and_glaze_from_freezing_rain_on_a_car_during_the_day_in_Elko%2C_Nevada.jpg",
-                "Mist": "https://upload.wikimedia.org/wikipedia/commons/0/01/Krakow_Wawel_i_Leg_przed_wschodem_Slonca.jpg"
+                "Mist": "https://upload.wikimedia.org/wikipedia/commons/0/01/Krakow_Wawel_i_Leg_przed_wschodem_Slonca.jpg",
+                "fog": "https://upload.wikimedia.org/wikipedia/en/7/76/Fog_over_mountain.jpg"
             };
 
             let weatherWords = Object.keys(weatherBackgrounds);
