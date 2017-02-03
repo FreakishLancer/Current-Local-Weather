@@ -66,16 +66,17 @@ $(document).ready(() => {
             let humidity = currentWeatherData.current.humidity;
 
             const weatherBackgrounds = {
+                "sunny": "https://www.publicdomainpictures.net/pictures/200000/velka/sunshine-background-1473794718hPi.jpg",
                 "clear": "https://static.pexels.com/photos/105234/pexels-photo-105234.jpeg",
                 "cloud": "https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Desktop-Image-Download-Free.jpg",
-                "Overcast": "https://www.publicdomainpictures.net/pictures/30000/velka/sunlight-through-clouds.jpg",
+                "overcast": "https://www.publicdomainpictures.net/pictures/30000/velka/sunlight-through-clouds.jpg",
                 "drizzle": "https://static.pexels.com/photos/17739/pexels-photo.jpg",
                 "rain": "https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Background-HD.jpg",
                 "thunder": "https://www.publicdomainpictures.net/pictures/160000/velka/eclairs-foudre-et-nuages-sombres-1456251710RTZ.jpg",
                 "snow": "https://static.pexels.com/photos/72458/pexels-photo-72458.jpeg",
                 "sleet": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Sleet_on_the_ground.jpg",
                 "ice": "https://upload.wikimedia.org/wikipedia/commons/a/a3/2013-01-24_Ice_pellets_and_glaze_from_freezing_rain_on_a_car_during_the_day_in_Elko%2C_Nevada.jpg",
-                "Mist": "https://upload.wikimedia.org/wikipedia/commons/0/01/Krakow_Wawel_i_Leg_przed_wschodem_Slonca.jpg",
+                "mist": "https://upload.wikimedia.org/wikipedia/commons/0/01/Krakow_Wawel_i_Leg_przed_wschodem_Slonca.jpg",
                 "fog": "https://upload.wikimedia.org/wikipedia/en/7/76/Fog_over_mountain.jpg"
             };
 
@@ -83,7 +84,7 @@ $(document).ready(() => {
             let backgroundURL;
 
             for (let i = 0; i < weatherWords.length; i++) {
-                if (weatherDesc.includes(weatherWords[i])) {
+                if (weatherDesc.toLowerCase().includes(weatherWords[i])) {
                     backgroundURL = weatherBackgrounds[weatherWords[i]];
                     break;
                 }
